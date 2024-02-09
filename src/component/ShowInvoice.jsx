@@ -64,7 +64,7 @@ const ShowInvoice = ({ data }) => {
       </div>
       <div>
         <span>الارباح الكلية</span>
-        <span> {data?.tree_profits + data?.direct_profits}</span>
+        <span> {data?.tree_profits + data?.direct_profits + data?.customers_profits}</span>
       </div>
 
       <div>
@@ -76,13 +76,19 @@ const ShowInvoice = ({ data }) => {
       <div>
         <span>حاله الطلب </span> : <span>{data?.status}</span>
       </div>
+      <div>
+        <span>الوصف </span> : <span>{data?.desc}</span>
+      </div>
+      <div>
+        <span>تم الانشاء  </span> : <span>{data?.Date}</span>
+      </div>
       {paying && (
         <p style={{ textAlign: "center" }}>
           Are you sure that you want to pay this
         </p>
       )}
       <div className="pay">
-        {!paying && (
+        {!paying && data.status !== "paid" ? (
           <button
             type="button"
             onClick={() => setPaying(true)}
@@ -90,7 +96,7 @@ const ShowInvoice = ({ data }) => {
           >
             Pay
           </button>
-        )}
+        ) : null}
         {paying && (
           <>
             <button type="button" className="trigger" onClick={handelAction}>
