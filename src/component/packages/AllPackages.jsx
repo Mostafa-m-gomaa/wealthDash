@@ -126,6 +126,9 @@ function AllPachages() {
                 <Link to={`/edit-package/${packagee._id}`} className="edit">
                   Edit
                 </Link>
+                <Link to={`/package-details/${packagee._id}`} className="edit">
+                  details
+                </Link>
               </td>
             </tr>
           ))}

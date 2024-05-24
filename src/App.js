@@ -67,6 +67,7 @@ import WithdrawReq from "./component/withdrawReq/WithdrawReq";
 import { Toaster } from "react-hot-toast";
 import MarketLog from "./component/marketLog/MarketLog";
 import PurchaeWithUser from "./component/Invoices/PurchaeWithUser";
+import PackageDetails from "./component/packages/PackageDetails";
 
 export const AppContext = createContext();
 
@@ -281,6 +282,7 @@ function App() {
             <Route path="/market-log/:id" element={<MarketLog />} />
             <Route path="/all-requests" element={<AllMarketingRequests />} />
             <Route path="/all-withdraw-req" element={<WithdrawReq />} />
+            <Route path="/package-details/:id" element={<PackageDetails />} />
           </Route>
         </Routes>
       </div>
